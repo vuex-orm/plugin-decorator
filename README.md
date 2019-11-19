@@ -1,20 +1,20 @@
 <p align="center">
-  <img width="192" src="https://github.com/vuex-orm/decorator/raw/master/logo-vuex-orm.png" alt="Vuex ORM">
+  <img width="192" src="https://github.com/vuex-orm/vuex-orm-decorator/raw/master/logo-vuex-orm.png" alt="Vuex ORM">
 </p>
 
 <h1 align="center">Vuex ORM Decorator</h1>
 
 <p align="center">
   <a href="https://travis-ci.org/vuex-orm/plugin-axios">
-    <img src="https://travis-ci.org/vuex-orm/decorator.svg?branch=master" alt="Travis CI">
+    <img src="https://travis-ci.org/vuex-orm/vuex-orm-decorator.svg?branch=master" alt="Travis CI">
   </a>
-  <a href="https://codecov.io/gh/vuex-orm/decorator">
-    <img src="https://codecov.io/gh/vuex-orm/decorator/branch/master/graph/badge.svg" alt="codecov">
+  <a href="https://codecov.io/gh/vuex-orm/vuex-orm-decorator">
+    <img src="https://codecov.io/gh/vuex-orm/vuex-orm-decorator/branch/master/graph/badge.svg" alt="codecov">
   </a>
   <a href="https://standardjs.com">
     <img src="https://img.shields.io/badge/code_style-standard-brightgreen.svg" alt="JavaScript Style Guide">
   </a>
-  <a href="https://github.com/vuex-orm/decorator/blob/master/LICENSE.md">
+  <a href="https://github.com/vuex-orm/vuex-orm-decorator/blob/master/LICENSE.md">
     <img src="https://img.shields.io/npm/l/@vuex-orm/plugin-axios.svg" alt="License">
   </a>
 </p>
