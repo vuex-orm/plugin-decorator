@@ -1,7 +1,7 @@
 {
   "name": "@vuex-orm/decorator",
   "version": "0.1.0",
-  "description": "Vuex ORM decorator for field definitions.",
+  "description": "Vuex ORM decorator for model field definitions.",
   "main": "dist/vuex-orm-decorator.common.js",
   "module": "dist/vuex-orm-decorator.esm.js",
   "typings": "lib/index.d.ts",
