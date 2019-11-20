@@ -1,9 +1,10 @@
 import PropertyDecorator from '../contracts/PropertyDecorator'
-import Field from './Field'
+import { TypeOptions } from '../options/Options'
+import Primitive from './Primitive'
 
 /**
  * Create a str decorator.
  */
-export default function Str (value: string | null = null): PropertyDecorator {
-  return Field(model => model.string(value))
+export default function Str (value: string | null, options?: TypeOptions): PropertyDecorator {
+  return Primitive(model => model.string(value), options)
 }
