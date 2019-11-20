@@ -15,8 +15,8 @@ export default function Primitive (callback: Callback, options?: TypeOptions): P
     if (type.value === null && !options?.nullable) {
       throw new Error(
         "[Vuex ORM] You've defined the default value of a field as `null` " +
-        "without enabling `nullable` option. If you want the field to accept" +
-        "`null`, set `nullable` option to `true`."
+        'without enabling `nullable` option. If you want the field to accept' +
+        '`null`, set `nullable` option to `true`.'
       )
     }
 
