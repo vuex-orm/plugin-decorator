@@ -1,13 +1,9 @@
-import { Model } from '@vuex-orm/core'
-import { setAttributeToFields } from '../support/Utils'
+import PropertyDecorator from '../contracts/PropertyDecorator'
+import Field from './Field'
 
 /**
  * Create a bool decorator.
  */
-export default function Bool (value: boolean | null = null): (target: Model, propertyKey: string) => void {
-  return (target: Model, propertyKey: string): void => {
-    const model = target.constructor as typeof Model
-
-    setAttributeToFields(model, propertyKey, model.boolean(value))
-  }
+export default function Bool (value: boolean | null = null): PropertyDecorator {
+  return Field(model => model.boolean(value))
 }

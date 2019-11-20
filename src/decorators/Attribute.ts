@@ -1,13 +1,9 @@
-import { Model } from '@vuex-orm/core'
-import { setAttributeToFields } from '../support/Utils'
+import PropertyDecorator from '../contracts/PropertyDecorator'
+import Field from './Field'
 
 /**
  * Create a attribute decorator.
  */
-export default function Attribute (value: any = null): (target: Model, propertyKey: string) => void {
-  return (target: Model, propertyKey: string): void => {
-    const model = target.constructor as typeof Model
-
-    setAttributeToFields(model, propertyKey, model.attr(value))
-  }
+export default function Attribute (value: any = null): PropertyDecorator {
+  return Field(model => model.attr(value))
 }
