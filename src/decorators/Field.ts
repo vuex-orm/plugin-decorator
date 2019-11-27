@@ -1,4 +1,4 @@
-import { Model, Attribute } from '@vuex-orm/core'
+import { Attribute, Model } from '@vuex-orm/core'
 import PropertyDecorator from '../contracts/PropertyDecorator'
 
 type Callback = (model: typeof Model) => Attribute
@@ -6,7 +6,7 @@ type Callback = (model: typeof Model) => Attribute
 /**
  * Create a generic field decorator.
  */
-export default function Field (callback: Callback): PropertyDecorator {
+export function Field (callback: Callback): PropertyDecorator {
   return (target: Model, propertyKey: string): void => {
     const model = target.constructor as typeof Model
 
@@ -21,3 +21,5 @@ export default function Field (callback: Callback): PropertyDecorator {
     model.cachedFields[model.entity][propertyKey] = callback(model)
   }
 }
+
+export default Field
