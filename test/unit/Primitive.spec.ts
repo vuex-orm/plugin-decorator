@@ -1,9 +1,13 @@
 import { Model } from '@vuex-orm/core'
-import Str from '@/decorators/Str'
+import { Str, DecoratedModel } from '@/decorators'
+import { suite, test } from '@testdeck/jest'
 
-describe('Primitive', () => {
-  it('throws if default value is `null` without `nullable` option is set to `true`', () => {
+@suite
+export class PrimitiveSpec {
+  @test
+  'throws if default value is `null` without `nullable` option is set to `true`' () {
     expect(() => {
+      @DecoratedModel('users')
       class User extends Model {
         @Str(null)
         name!: string
@@ -11,5 +15,5 @@ describe('Primitive', () => {
 
       console.log(User)
     }).toThrow()
-  })
-})
+  }
+}

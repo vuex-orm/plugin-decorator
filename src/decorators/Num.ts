@@ -6,7 +6,7 @@ import Primitive from './Primitive'
 /**
  * Create a num decorator.
  */
-export function Num (value?: FunctorOrValue<number>, options?: TypeOptions): PropertyDecorator {
+export function Num (value?: FunctorOrValue<number> | null, options?: TypeOptions): PropertyDecorator {
   return Primitive(model => model.number(unwrapFunctorOrValue(value)), options)
 }
 

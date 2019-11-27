@@ -5,7 +5,16 @@ export function PrimaryKey (): PropertyDecorator {
   return (target: Model, propertyKey: string): void => {
     const model = target.constructor as typeof Model
 
-    model.primaryKey = propertyKey
+    // making the primary key values an array
+    // even if you have one and only one value there's no effect in functionality
+    if (!model.primaryKey) {
+      model.primaryKey = []
+    } else if (typeof model.primaryKey === 'string') {
+      const oldPrimaryKey = model.primaryKey
+      model.primaryKey = [oldPrimaryKey]
+    }
+
+    model.primaryKey.push(propertyKey)
   }
 }
 

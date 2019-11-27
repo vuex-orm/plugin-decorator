@@ -1,8 +1,12 @@
 import { Model, Attr } from '@vuex-orm/core'
-import Attribute from '@/decorators/Attribute'
+import { Attribute, DecoratedModel } from '@/decorators'
+import { suite, test } from '@testdeck/jest'
 
-describe('Attribute', () => {
-  it('can define `attr` field', () => {
+@suite
+export class AttributeSpec {
+  @test
+  'can define `attr` field' () {
+    @DecoratedModel('users')
     class User extends Model {
       @Attribute()
       id!: number
@@ -10,9 +14,11 @@ describe('Attribute', () => {
 
     expect(User.getFields().id).toBeInstanceOf(Attr)
     expect((new User()).id).toBe(null)
-  })
+  }
 
-  it('can define `attr` field with default value', () => {
+  @test
+  'can define `attr` field with default value' () {
+    @DecoratedModel('users')
     class User extends Model {
       @Attribute(1)
       id!: number
@@ -20,5 +26,5 @@ describe('Attribute', () => {
 
     expect(User.getFields().id).toBeInstanceOf(Attr)
     expect((new User()).id).toBe(1)
-  })
-})
+  }
+}

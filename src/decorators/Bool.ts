@@ -6,7 +6,7 @@ import Primitive from './Primitive'
 /**
  * Create a bool decorator.
  */
-export function Bool (value?: FunctorOrValue<boolean>, options?: TypeOptions): PropertyDecorator {
+export function Bool (value?: FunctorOrValue<boolean> | null, options?: TypeOptions): PropertyDecorator {
   return Primitive(model => model.boolean(unwrapFunctorOrValue(value)), options)
 }
 

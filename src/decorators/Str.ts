@@ -6,7 +6,7 @@ import Primitive from './Primitive'
 /**
  * Create a str decorator.
  */
-export function Str (value?: FunctorOrValue<string>, options?: TypeOptions): PropertyDecorator {
+export function Str (value?: FunctorOrValue<string> | null, options?: TypeOptions): PropertyDecorator {
   return Primitive(model => model.string(unwrapFunctorOrValue(value)), options)
 }
 
