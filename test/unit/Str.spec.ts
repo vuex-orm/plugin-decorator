@@ -1,8 +1,9 @@
+import { DecoratedModel, Str } from '@/decorators'
 import { Model, String } from '@vuex-orm/core'
-import Str from '@/decorators/Str'
 
-describe('Str', () => {
-  it('can define `string` field', () => {
+describe('string', () => {
+  it('can define `string` field', function () {
+    @DecoratedModel('users')
     class User extends Model {
       @Str('John Doe')
       name!: string
@@ -16,13 +17,14 @@ describe('Str', () => {
     expect((new User()).email).toBe('john.doe@example.com')
   })
 
-  it('can define `string` as nullable', () => {
+  it('can define `string` as nullable', function () {
+    @DecoratedModel('users')
     class User extends Model {
       @Str(null, { nullable: true })
-      name!: string
+      name?: string
 
       @Str(null, { nullable: true })
-      email!: string
+      email?: string
     }
 
     expect(User.getFields().name).toBeInstanceOf(String)

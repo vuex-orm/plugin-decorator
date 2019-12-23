@@ -1,10 +1,13 @@
 import PropertyDecorator from '../contracts/PropertyDecorator'
 import { TypeOptions } from '../options/Options'
+import { FunctorOrValue, unwrapFunctorOrValue } from '../utils'
 import Primitive from './Primitive'
 
 /**
  * Create a num decorator.
  */
-export default function Num (value: number | null, options?: TypeOptions): PropertyDecorator {
-  return Primitive(model => model.number(value), options)
+export function Num (value?: FunctorOrValue<number> | null, options?: TypeOptions): PropertyDecorator {
+  return Primitive(model => model.number(unwrapFunctorOrValue(value)), options)
 }
+
+export default Num

@@ -1,8 +1,9 @@
 import { Model, Number } from '@vuex-orm/core'
-import Num from '@/decorators/Num'
+import { Num, DecoratedModel } from '@/decorators'
 
-describe('Num', () => {
-  it('can define `number` field', () => {
+describe('number', () => {
+  it('can define `number` field', function () {
+    @DecoratedModel('users')
     class User extends Model {
       @Num(34)
       age!: number
@@ -12,10 +13,11 @@ describe('Num', () => {
     expect((new User()).age).toBe(34)
   })
 
-  it('can define `number` as nullable', () => {
+  it('can define `number` as nullable', function () {
+    @DecoratedModel('users')
     class User extends Model {
       @Num(null, { nullable: true })
-      age!: number
+      age?: number
     }
 
     expect(User.getFields().age).toBeInstanceOf(Number)

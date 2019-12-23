@@ -1,9 +1,10 @@
 import { Model } from '@vuex-orm/core'
-import Str from '@/decorators/Str'
+import { Str, DecoratedModel } from '@/decorators'
 
-describe('Primitive', () => {
-  it('throws if default value is `null` without `nullable` option is set to `true`', () => {
+describe('primitive', () => {
+  it('throws if default value is `null` without `nullable` option is set to `true`', function () {
     expect(() => {
+      @DecoratedModel('users')
       class User extends Model {
         @Str(null)
         name!: string

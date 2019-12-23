@@ -1,9 +1,27 @@
-import Attribute from './decorators/Attribute'
-import Str from './decorators/Str'
-import Bool from './decorators/Bool'
+import {
+  Attribute, BelongsTo, BelongsToMany, Bool, DecoratedModel, Field, HasMany, HasManyBy, HasManyThrough, HasOne, Increment, MorphedByMany, MorphMany, MorphOne, MorphTo,
+  MorphToMany, Num, PrimaryKey, Primitive, Str
+} from './decorators'
 
 export default {
   Attribute,
-  Str,
-  Bool
+  BelongsTo,
+  BelongsToMany,
+  Bool,
+  DecoratedModel,
+  Field,
+  HasMany,
+  HasManyBy,
+  HasManyThrough,
+  HasOne,
+  Increment,
+  MorphedByMany,
+  MorphMany,
+  MorphOne,
+  MorphTo,
+  MorphToMany,
+  Num,
+  PrimaryKey,
+  Primitive,
+  Str
 }
