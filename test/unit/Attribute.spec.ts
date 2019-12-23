@@ -12,4 +12,14 @@ describe('attribute', () => {
     expect(User.getFields().id).toBeInstanceOf(Attr)
     expect((new User()).id).toBe(null)
   })
+
+  it('can define `attr` field with default value', function () {
+    class User extends Model {
+      @Attribute(1)
+      id!: number
+    }
+
+    expect(User.getFields().id).toBeInstanceOf(Attr)
+    expect((new User()).id).toBe(1)
+  })
 })
