@@ -1,11 +1,8 @@
 import { Model, Boolean } from '@vuex-orm/core'
 import { DecoratedModel, Bool } from '@/decorators'
-import { suite, test } from '@testdeck/jest'
 
-@suite
-export class BoolSpec {
-  @test
-  'can define `bool` field' () {
+describe('boolean', () => {
+  it('can define `bool` field', function () {
     @DecoratedModel('users')
     class User extends Model {
       @Bool(true)
@@ -14,10 +11,9 @@ export class BoolSpec {
 
     expect(User.getFields().active).toBeInstanceOf(Boolean)
     expect((new User()).active).toBe(true)
-  }
+  })
 
-  @test
-  'can define `bool` field as nullable' () {
+  it('can define `bool` field as nullable', function () {
     @DecoratedModel('users')
     class User extends Model {
       @Bool(null, { nullable: true })
@@ -26,5 +22,5 @@ export class BoolSpec {
 
     expect(User.getFields().active).toBeInstanceOf(Boolean)
     expect((new User()).active).toBe(null)
-  }
-}
+  })
+})
